@@ -1,8 +1,0 @@
-7
-WesternAustralia NorthernTerritory SouthAustralia
-NorthernTerritory Queensland SouthAustralia WesternAustralia
-SouthAustralia Queensland NewSouthWales Victoria NorthernTerritory WesternAustralia
-Queensland NewSouthWales NorthernTerritory SouthAustralia
-NewSouthWales Victoria Queensland SouthAustralia
-Victoria SouthAustralia NewSouthWales Tasmania
-Tasmania Victoria

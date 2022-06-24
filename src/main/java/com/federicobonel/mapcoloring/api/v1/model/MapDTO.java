@@ -16,8 +16,4 @@ public class MapDTO {
     @ApiModelProperty(value = "The map represented as an adjacency list", required = true)
     @JsonProperty("adjacency_map")
     private String[][] adjacencyMap;
-
-    @ApiModelProperty(value = "The solution for the map coloring problem")
-    @JsonProperty("colors_per_region")
-    private Map<String, Integer> colorsPerRegion;
 }

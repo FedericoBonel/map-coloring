@@ -2,6 +2,7 @@ package com.federicobonel.mapcoloring.services;
 
 import com.federicobonel.mapcoloring.api.v1.model.MapDTO;
 import com.federicobonel.mapcoloring.api.v1.mapper.MapMapper;
+import com.federicobonel.mapcoloring.api.v1.model.MapResponseDTO;
 import com.federicobonel.mapcoloring.model.MapGraph;
 import org.springframework.stereotype.Service;
 
@@ -15,16 +16,14 @@ public class MapServiceImpl implements MapService {
     }
 
     @Override
-    public MapDTO getGreedyColoring(MapDTO mapDTO) {
+    public MapResponseDTO getGreedyColoring(MapDTO mapDTO) {
         MapGraph mapGraph = mapMapper.mapDTOToMap(mapDTO);
-        mapDTO.setColorsPerRegion(mapGraph.getGreedyMapColoring());
-        return mapDTO;
+        return new MapResponseDTO(mapDTO, mapGraph.getGreedyMapColoring());
     }
 
     @Override
-    public MapDTO getBacktrackingColoring(MapDTO mapDTO) {
+    public MapResponseDTO getBacktrackingColoring(MapDTO mapDTO) {
         MapGraph mapGraph = mapMapper.mapDTOToMap(mapDTO);
-        mapDTO.setColorsPerRegion(mapGraph.getBacktrackingMapColoring());
-        return mapDTO;
+        return new MapResponseDTO(mapDTO, mapGraph.getBacktrackingMapColoring());
     }
 }

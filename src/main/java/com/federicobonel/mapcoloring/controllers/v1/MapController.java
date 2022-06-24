@@ -1,6 +1,7 @@
 package com.federicobonel.mapcoloring.controllers.v1;
 
 import com.federicobonel.mapcoloring.api.v1.model.MapDTO;
+import com.federicobonel.mapcoloring.api.v1.model.MapResponseDTO;
 import com.federicobonel.mapcoloring.config.SwaggerConfig;
 import com.federicobonel.mapcoloring.exceptions.InvalidQueryFormat;
 import com.federicobonel.mapcoloring.services.MapService;
@@ -32,13 +33,11 @@ public class MapController {
                     While the greedy algorithm is faster it's not complete, which means that finding a solution depends completely on the order of traversal through the regions.
                     The solution is given in the form of a set of names of each region with a number assigned to it, each number represents a distinct color.
                     """)
-    @GetMapping
+    @PostMapping
     @ResponseStatus(HttpStatus.OK)
-    public MapDTO getMapColoring(@RequestParam("algorithm")
-                                     @ApiParam(name = "Algorithm type", value = "It can either be 'greedy' or 'backtracking'",
+    public MapResponseDTO getMapColoring(@RequestParam("algorithm") @ApiParam(value = "It can either be 'greedy' or 'backtracking'",
                                              example = "greedy") String algorithm,
-                                 @RequestBody
-                                 @ApiParam(name = "Map representation") MapDTO mapDTO) {
+                                         @RequestBody @ApiParam(name = "Map representation") MapDTO mapDTO) {
 
         if (mapDTO.getAdjacencyMap() == null || mapDTO.getAdjacencyMap().length == 0) {
             throw new InvalidQueryFormat();

@@ -1,11 +1,12 @@
 package com.federicobonel.mapcoloring.services;
 
 import com.federicobonel.mapcoloring.api.v1.model.MapDTO;
+import com.federicobonel.mapcoloring.api.v1.model.MapResponseDTO;
 
 public interface MapService {
 
-    MapDTO getGreedyColoring(MapDTO mapDTO);
+    MapResponseDTO getGreedyColoring(MapDTO mapDTO);
 
-    MapDTO getBacktrackingColoring(MapDTO mapDTO);
+    MapResponseDTO getBacktrackingColoring(MapDTO mapDTO);
 
 }

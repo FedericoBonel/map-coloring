@@ -1,5 +1,6 @@
 # mapGraph-coloring
-Backtracking and greedy algorithms to solve the mapGraph-coloring problem with only 4 colors in a mapGraph represented as an adjacency list.
-Both of the algorithms are exposed through a RestAPI endpoint using Spring MVC.
+RestAPI that provides backtracking and greedy algorithms to solve the map coloring problem (subset of
+the set of NP graph coloring problems) following the 4 color theorem (minimizes the number of colors used).
 
+### Take a look at the Swagger Doc.
 ![map-coloring-swagger-ui](https://media.giphy.com/media/9Wv6EBfra5dG9vpKFq/giphy.gif)
